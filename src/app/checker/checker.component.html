@@ -1,1 +1,1 @@
-<span>{{ cart.id }}</span>{{ cart.name }}<input type="checkbox" [checked] = "cart.status" (click) = "itemId(cart)">
+<div [ngStyle] = "{'background': cart.status === true ? 'green' : 'white'}"   ><span>{{ cart.id }}</span>{{ cart.name }}<input type="checkbox" [checked] = "cart.status" (click) = "itemId(cart)"></div>

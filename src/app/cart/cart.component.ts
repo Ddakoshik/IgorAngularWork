@@ -19,7 +19,6 @@ export class CartComponent implements OnInit {
     {id: 2, name: 'Name 2', status: false},
     {id: 3, name: 'Name 3', status: false},
   ];
-  
   constructor() { }
 
   ngOnInit() {
@@ -27,8 +26,9 @@ export class CartComponent implements OnInit {
 
   checkAll() {
 
-    
-    for (var i = 0; i < this.carts.length; i++) this.saveCartsArray[i] = this.carts[i];
+    for (let i = 0; i < this.carts.length; i++) {
+      this.saveCartsArray[i] = this.carts[i];
+    }
     // this.saveCartsArray = this.carts;
     console.log (this.carts);
     console.log (this.saveCartsArray);
@@ -51,17 +51,22 @@ export class CartComponent implements OnInit {
   }
 
   receiveMessage($event) {
-    let id = $event.item.id;
+    const id = $event.item.id;
+    const a = {id: 1, name: 'dsdsd'};
+    const b = [1, 2, '3'];
     // console.log(id);
     this.carts.map(function(id) {
       if (id) {
           return status = $event.status;
         }
     });
- 
+    a.name = 'd32323323';
+
+
     // this.saveCarts = JSON.stringify(this.carts).toString();
     // this.saveCartsArray = this.carts;
     // console.log (this.carts);
     // console.log (this.saveCartsArray);
-  } 
+  }
+
 }
