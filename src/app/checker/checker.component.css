@@ -1,0 +1,3 @@
+.statusOk{background: green;}
+.statusOkRed{background: red;}
+div{height: 50px; display: flex; align-items: center; border: 1px solid red;}

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 
 import { CartModel } from '../cartModel';
+import { CheckerComponent } from '../checker/checker.component';
 
 @Component({
   selector: 'app-cart',
@@ -12,6 +13,8 @@ export class CartComponent implements OnInit {
   flag = true;
   toggle = true;
 
+  @ViewChildren(CheckerComponent)  checkerComponent;
+  @ViewChildren('cmp') components;
   saveCarts = '';
   saveCartsArray = [];
   carts: CartModel[] = [
@@ -49,6 +52,18 @@ export class CartComponent implements OnInit {
     // this.carts = this.saveCarts;
     // console.log(this.carts);
   }
+
+
+
+    checkStatus() {
+      this.checkerComponent.map(x => x.checkStatus()) ;
+    }
+
+    checkStatusRed() {
+      //console.log(this.components._results);
+      this.components.map(x => x.checkStatusRed()) ;
+    }
+
 
   receiveMessage($event) {
     const id = $event.item.id;

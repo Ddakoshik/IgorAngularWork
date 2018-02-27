@@ -11,6 +11,9 @@ export class CheckerComponent implements OnInit {
   @Input() cart: CartModel;
   @Output() idEvent = new EventEmitter<any>(); 
 
+  allOkFlag = false;
+  allOkFlagRed = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -25,4 +28,19 @@ export class CheckerComponent implements OnInit {
       item:item
       });
   }
+
+  checkStatus() {
+     if (this.cart.status) {
+        this.allOkFlag = true;
+       } else {
+        this.allOkFlag = false;
+       }
+  }
+  checkStatusRed() {
+    if (this.cart.status) {
+       this.allOkFlagRed = true;
+      } else {
+       this.allOkFlagRed = false;
+      }
+ }
 }

@@ -1,8 +1,10 @@
 <button (click) = "checkAll()">CheckAll</button>
 <button (click) = "loadData()">Back in Time</button>
-<button (click) = "checkedGrean()">Checked Grean</button>
+<button (click) = "checkStatus()">Checked Grean</button>
+<button (click) = "checkStatusRed()">Checked Red (second method)</button>
+
 <ul>
-  <li *ngFor = "let cart of carts"><app-checker [cart] = "cart" (idEvent) = "receiveMessage($event)"></app-checker></li>
+  <li *ngFor = "let cart of carts"><app-checker [cart] = "cart" (idEvent) = "receiveMessage($event)" #cmp></app-checker></li>
 </ul>
 {{ message }}
 <!-- 
