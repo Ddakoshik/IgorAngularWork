@@ -8,6 +8,8 @@ import { CartModel } from '../cartModel'
 })
 export class CheckerComponent implements OnInit {
 
+  
+
   @Input() cart: CartModel;
   @Output() idEvent = new EventEmitter<any>(); 
 
