@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CartModel } from '../cartModel'
+import { CartModel } from '../cartModel';
 
 @Component({
   selector: 'app-checker',
@@ -9,7 +9,7 @@ import { CartModel } from '../cartModel'
 export class CheckerComponent implements OnInit {
 
   @Input() cart: CartModel;
-  @Output() idEvent = new EventEmitter<any>(); 
+  @Output() idEvent = new EventEmitter<any>();
 
   allOkFlag = false;
   allOkFlagRed = false;
@@ -19,13 +19,13 @@ export class CheckerComponent implements OnInit {
   ngOnInit() {
   }
 
-  itemId(item){
+  itemId(item) {
     this.cart.status = !this.cart.status;
   //  console.log(this.cart.status);
 
     this.idEvent.emit({
-      status:this.cart.status,
-      item:item
+      status: this.cart.status,
+      item: item
       });
   }
 

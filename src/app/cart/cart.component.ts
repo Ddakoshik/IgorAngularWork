@@ -60,7 +60,7 @@ export class CartComponent implements OnInit {
     }
 
     checkStatusRed() {
-      //console.log(this.components._results);
+      // console.log(this.components._results);
       this.components.map(x => x.checkStatusRed()) ;
     }
 
