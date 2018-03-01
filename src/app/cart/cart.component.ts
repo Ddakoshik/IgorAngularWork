@@ -67,15 +67,13 @@ export class CartComponent implements OnInit {
 
   receiveMessage($event) {
     const id = $event.item.id;
-    const a = {id: 1, name: 'dsdsd'};
-    const b = [1, 2, '3'];
+
     // console.log(id);
     this.carts.map(function(id) {
       if (id) {
           return status = $event.status;
         }
     });
-    a.name = 'd32323323';
 
 
     // this.saveCarts = JSON.stringify(this.carts).toString();
