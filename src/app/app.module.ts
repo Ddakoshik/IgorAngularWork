@@ -9,6 +9,11 @@ import { CheckerComponent } from './checker/checker.component';
 import { LoginFormsComponent } from './login-forms/login-forms.component';
 
 
+import { ClickMeComponent } from './user-input/click-me/click-me.component';
+import { KeyupComponent } from './user-input/keyup/keyup.component';
+import { UserInputComponent } from './user-input/user-input.component';
+import { LoopBackComponent } from './user-input/loop-back/loop-back.component';
+
 
 
 @NgModule({
@@ -17,6 +22,10 @@ import { LoginFormsComponent } from './login-forms/login-forms.component';
     CartComponent,
     CheckerComponent,
     LoginFormsComponent,
+    ClickMeComponent,
+    KeyupComponent,
+    UserInputComponent,
+    LoopBackComponent,
   ],
   imports: [
     BrowserModule,
