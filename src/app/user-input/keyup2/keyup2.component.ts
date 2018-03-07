@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-loop-back',
+  selector: 'app-keyup2',
   template: `
-  <p>Обносвляет через переменную box</p>
-    <input #box (keyup)="0">
-    <p>{{box.value}}</p>
+  <p>Вводит при кейАп</p>
+  <input #box (keyup)="onKey(box.value)">
+  <p>{{values}}</p>
   `
 })
-
-export class LoopBackComponent  {
-
+export class Keyup2Component {
   values = '';
   onKey(value: string) {
     this.values += value + ' | ';
   }
+
   constructor() { }
 
   ngOnInit() {

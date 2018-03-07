@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-keyup',
   template: `
+  <p>Выводит сразу  при вводе</p>
   <input (keyup)="onKey($event)">
     <p>{{values}}</p>
   `
