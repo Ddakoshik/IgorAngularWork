@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material-module/material.module';
 import { CommonModule } from '@angular/common';
 import { UserInputModule } from './user-input/user-input.module';
-import { NotFoundModule } from './not-found/not-found.module';
+// import { NotFoundModule } from './not-found/not-found.module';
 import { AppRoutingModule } from './app.routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,8 +27,8 @@ import { LoginFormsComponent } from './login-forms/login-forms.component';
     BrowserAnimationsModule,
     MaterialModule,
     CommonModule,
-    UserInputModule,
-    NotFoundModule,
+    // UserInputModule,
+    // NotFoundModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './not-found.component';
+import { UserInputComponent } from './user-input.component';
+
 
 const routeschild: Routes = [
-    { path: '', component: NotFoundComponent }
+    { path: '', component: UserInputComponent }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routeschild)],
     exports: [RouterModule]
 })
-export class NotFoundRoutingModule {
+export class UserInputRoutingModule {
 }

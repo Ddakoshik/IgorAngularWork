@@ -8,14 +8,14 @@ import { CartComponent } from './cart/cart.component';
 const routes: Routes = [
   { path: '', redirectTo: '/cart', pathMatch: 'full' },
   { path: 'cart', component: CartComponent },
-  { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' }, 
+  { path: 'user-input', loadChildren: './user-input/user-input.module#UserInputModule' },
+  { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
   { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
-  
 })
 
 export class AppRoutingModule {}

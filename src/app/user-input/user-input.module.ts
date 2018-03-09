@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UserInputRoutingModule } from './user-input-routing.module';
 
 
 import { UserInputComponent } from './user-input.component';
@@ -15,7 +16,7 @@ import { LittleTourComponent } from './little-tour/little-tour.component';
 
   declarations: [
     UserInputComponent,
-    ClickMeComponent,   
+    ClickMeComponent,
     KeyupComponent,
     LoopBackComponent,
     Keyup2Component,
@@ -25,16 +26,17 @@ import { LittleTourComponent } from './little-tour/little-tour.component';
   ],
   imports: [
     CommonModule,
+    UserInputRoutingModule,
   ],
   exports: [
     UserInputComponent,
-    ClickMeComponent,   
+    ClickMeComponent,
     KeyupComponent,
     LoopBackComponent,
     Keyup2Component,
     Keyup3Component,
     Keyup4Component,
-    LittleTourComponent, 
+    LittleTourComponent,
   ],
 })
 
