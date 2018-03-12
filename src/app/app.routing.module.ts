@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/cart', pathMatch: 'full' },
   { path: 'cart', component: CartComponent },
   { path: 'user-input', loadChildren: './user-input/user-input.module#UserInputModule' },
+  { path: 'template-driven-forms', loadChildren: './template-driven-forms/template-driven-forms.module#TemplateDrivenFormsModule' },
   { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
   { path: '**', redirectTo: 'not-found' }
 ];
