@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { FormRoutingModule } from './form-routing.module';
 import { UserInputModule } from './user-input/user-input.module';
 import { ReactiveFormsModule} from '@angular/forms';
@@ -14,7 +14,7 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { HeroDetailComponent } from './reactive-forms/hero-detail/hero-detail.component';
 import { HeroListComponent } from './reactive-forms/hero-list/hero-list.component';
-import { HeroService }         from './reactive-forms/hero.service';
+import { HeroService } from './reactive-forms/hero.service';
 
 
 
@@ -38,7 +38,6 @@ import { HeroService }         from './reactive-forms/hero.service';
     HeroDetailComponent,
     HeroListComponent,
   ],
-  
   exports: [
     FormComponent,
     TemplateDrivenFormsComponent,
@@ -53,4 +52,3 @@ import { HeroService }         from './reactive-forms/hero.service';
   providers: [ HeroService ],
 })
 export class FormModule { }
- 
