@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoopBackComponent } from './loop-back.component';
+import { ReactiveFormsComponent } from './reactive-forms.component';
 
-describe('LoopBackComponent', () => {
-  let component: LoopBackComponent;
-  let fixture: ComponentFixture<LoopBackComponent>;
+describe('ReactiveFormsComponent', () => {
+  let component: ReactiveFormsComponent;
+  let fixture: ComponentFixture<ReactiveFormsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoopBackComponent ]
+      declarations: [ ReactiveFormsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoopBackComponent);
+    fixture = TestBed.createComponent(ReactiveFormsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

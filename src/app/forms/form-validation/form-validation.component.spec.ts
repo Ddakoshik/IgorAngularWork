@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Keyup4Component } from './keyup4.component';
+import { FormValidationComponent } from './form-validation.component';
 
-describe('Keyup4Component', () => {
-  let component: Keyup4Component;
-  let fixture: ComponentFixture<Keyup4Component>;
+describe('FormValidationComponent', () => {
+  let component: FormValidationComponent;
+  let fixture: ComponentFixture<FormValidationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Keyup4Component ]
+      declarations: [ FormValidationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Keyup4Component);
+    fixture = TestBed.createComponent(FormValidationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
