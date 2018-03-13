@@ -13,7 +13,8 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { HeroDetailComponent } from './reactive-forms/hero-detail/hero-detail.component';
-
+import { HeroListComponent } from './reactive-forms/hero-list/hero-list.component';
+import { HeroService }         from './reactive-forms/hero.service';
 
 
 
@@ -35,6 +36,7 @@ import { HeroDetailComponent } from './reactive-forms/hero-detail/hero-detail.co
     FormValidationComponent,
     ReactiveFormsComponent,
     HeroDetailComponent,
+    HeroListComponent,
   ],
   
   exports: [
@@ -42,7 +44,13 @@ import { HeroDetailComponent } from './reactive-forms/hero-detail/hero-detail.co
     TemplateDrivenFormsComponent,
     UserInputComponent,
     UserInputModule,
+    HeroDetailComponent,
+    HeroListComponent,
+    FormValidationComponent,
+    ReactiveFormsComponent,
+    HeroFormComponent,
   ],
+  providers: [ HeroService ],
 })
 export class FormModule { }
  
