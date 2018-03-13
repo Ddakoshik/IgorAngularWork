@@ -14,6 +14,7 @@
 </div> -->
 
 <nav>
+  <button (click)="getHeroes()" class="btn btn-primary">Refresh</button>
   <a *ngFor="let hero of heroes | async" (click)="select(hero)">{{hero.name}}</a>
 </nav>
 
