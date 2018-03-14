@@ -15,6 +15,9 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { HeroDetailComponent } from './reactive-forms/hero-detail/hero-detail.component';
 import { HeroListComponent } from './reactive-forms/hero-list/hero-list.component';
 import { HeroService } from './reactive-forms/hero.service';
+import { DynamicFormsComponent } from './dynamic-forms/dynamic-forms.component';
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamic-forms/dynamic-form-question/dynamic-form-question.component';
 
 
 
@@ -37,6 +40,9 @@ import { HeroService } from './reactive-forms/hero.service';
     ReactiveFormsComponent,
     HeroDetailComponent,
     HeroListComponent,
+    DynamicFormsComponent,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent,
   ],
   exports: [
     FormComponent,

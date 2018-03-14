@@ -1,6 +1,8 @@
-import { Component, OnInit, Input,  OnChanges} from '@angular/core';
-import { FormControl , FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Address, Hero, states} from '../data-models';
+import { Component, Input, OnChanges }       from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+
+import { Address, Hero, states } from '../data-models';
+import { HeroService }           from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -8,38 +10,86 @@ import { Address, Hero, states} from '../data-models';
   styleUrls: ['./hero-detail.component.css']
 })
 
-
-export class HeroDetailComponent implements OnInit {
-
-  heroForm: FormGroup;
-  states = states;
-
+export class HeroDetailComponent implements OnChanges {
   @Input() hero: Hero;
 
-  constructor(private fb: FormBuilder) {
+  heroForm: FormGroup;
+  nameChangeLog: string[] = [];
+  states = states;
+
+  constructor(
+    private fb: FormBuilder,
+    private heroService: HeroService) {
+
     this.createForm();
+    this.logNameChange();
   }
-  
+
+  createForm() {
+    this.heroForm = this.fb.group({
+      name: '',
+      secretLairs: this.fb.array([]),
+      power: '',
+      sidekick: ''
+    });
+  }
 
   ngOnChanges() {
     this.rebuildForm();
   }
 
-  ngOnInit() {
-  }
-
-  createForm() {
-    this.heroForm = this.fb.group({
-      name: ['', Validators.required ],
-      address: this.fb.group(new Address()), // <-- a FormGroup with a new address
-      power: '',
-      sidekick: ''
-    });
-  }
   rebuildForm() {
     this.heroForm.reset({
-      name: this.hero.name,
-      address: this.hero.addresses[0] || new Address()
+      name: this.hero.name
     });
+    this.setAddresses(this.hero.addresses);
+  }
+
+  get secretLairs(): FormArray {
+    return this.heroForm.get('secretLairs') as FormArray;
+  };
+
+  setAddresses(addresses: Address[]) {
+    const addressFGs = addresses.map(address => this.fb.group(address));
+    const addressFormArray = this.fb.array(addressFGs);
+    this.heroForm.setControl('secretLairs', addressFormArray);
+  }
+
+  addLair() {
+    this.secretLairs.push(this.fb.group(new Address()));
+  }
+
+  onSubmit() {
+    this.hero = this.prepareSaveHero();
+    this.heroService.updateHero(this.hero).subscribe(/* error handling */);
+    this.rebuildForm();
+  }
+
+  prepareSaveHero(): Hero {
+    const formModel = this.heroForm.value;
+
+    // deep copy of form model lairs
+    const secretLairsDeepCopy: Address[] = formModel.secretLairs.map(
+      (address: Address) => Object.assign({}, address)
+    );
+
+    // return new `Hero` object containing a combination of original hero value(s)
+    // and deep copies of changed form model values
+    const saveHero: Hero = {
+      id: this.hero.id,
+      name: formModel.name as string,
+      // addresses: formModel.secretLairs // <-- bad!
+      addresses: secretLairsDeepCopy
+    };
+    return saveHero;
+  }
+
+  revert() { this.rebuildForm(); }
+
+  logNameChange() {
+    const nameControl = this.heroForm.get('name');
+    nameControl.valueChanges.forEach(
+      (value: string) => this.nameChangeLog.push(value)
+    );
   }
 }
