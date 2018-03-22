@@ -11,6 +11,13 @@ import { CartComponent } from './cart/cart.component';
 import { CheckerComponent } from './checker/checker.component';
 import { LoginFormsComponent } from './login-forms/login-forms.component';
 
+import { environment } from './../environments/environment';
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { FirebaseTestComponent } from './firebase-test/firebase-test.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +26,17 @@ import { LoginFormsComponent } from './login-forms/login-forms.component';
     CartComponent,
     CheckerComponent,
     LoginFormsComponent,
+    FirebaseTestComponent
   ], 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
