@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FirebaseTestComponent } from './firebase-test.component';
+import { FirebaseRealtimeComponent } from './firebase-realtime.component';
 
-describe('FirebaseTestComponent', () => {
-  let component: FirebaseTestComponent;
-  let fixture: ComponentFixture<FirebaseTestComponent>;
+describe('FirebaseRealtimeComponent', () => {
+  let component: FirebaseRealtimeComponent;
+  let fixture: ComponentFixture<FirebaseRealtimeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FirebaseTestComponent ]
+      declarations: [ FirebaseRealtimeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FirebaseTestComponent);
+    fixture = TestBed.createComponent(FirebaseRealtimeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material-module/material.module';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './app.routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -11,13 +11,17 @@ import { CartComponent } from './cart/cart.component';
 import { CheckerComponent } from './checker/checker.component';
 import { LoginFormsComponent } from './login-forms/login-forms.component';
 
-import { environment } from './../environments/environment';
-// firebase
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { FirebaseTestComponent } from './firebase-test/firebase-test.component';
+// firebase
+
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { FirebaseColectionComponent } from './firebase-colection/firebase-colection.component';
+import { FirebaseRealtimeComponent } from './firebase-realtime/firebase-realtime.component';
+
 
 @NgModule({
   declarations: [
@@ -26,8 +30,9 @@ import { FirebaseTestComponent } from './firebase-test/firebase-test.component';
     CartComponent,
     CheckerComponent,
     LoginFormsComponent,
-    FirebaseTestComponent
-  ], 
+    FirebaseColectionComponent,
+    FirebaseRealtimeComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -35,8 +40,8 @@ import { FirebaseTestComponent } from './firebase-test/firebase-test.component';
     CommonModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
