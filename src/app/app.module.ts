@@ -18,9 +18,14 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireStorageModule} from 'angularfire2/storage';
 
 import { FirebaseColectionComponent } from './firebase-colection/firebase-colection.component';
 import { FirebaseRealtimeComponent } from './firebase-realtime/firebase-realtime.component';
+import { FirebaseStorageComponent } from './firebase-storage/firebase-storage.component';
+
+
+import { DropZoneDirective } from './firebase-storage/drop-zone.directive';
 
 
 @NgModule({
@@ -31,7 +36,9 @@ import { FirebaseRealtimeComponent } from './firebase-realtime/firebase-realtime
     CheckerComponent,
     LoginFormsComponent,
     FirebaseColectionComponent,
-    FirebaseRealtimeComponent
+    FirebaseRealtimeComponent,
+    FirebaseStorageComponent,
+    DropZoneDirective
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,8 @@ import { FirebaseRealtimeComponent } from './firebase-realtime/firebase-realtime
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
