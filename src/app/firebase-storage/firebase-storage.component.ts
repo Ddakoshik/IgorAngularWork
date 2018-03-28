@@ -18,7 +18,7 @@ export class FirebaseStorageComponent implements OnInit {
   profileUrl: Observable<string | null>;
 
   constructor(private afStorage: AngularFireStorage) {
-    // const ref = this.afStorage.ref('users/davideast.jpg');
+    // const ref = this.afStorage.ref('images/stars.jpg');
     // this.profileUrl = ref.getDownloadURL();
    }
 

@@ -25,7 +25,10 @@ import { FirebaseRealtimeComponent } from './firebase-realtime/firebase-realtime
 import { FirebaseStorageComponent } from './firebase-storage/firebase-storage.component';
 
 
-import { DropZoneDirective } from './firebase-storage/drop-zone.directive';
+import { DropZoneDirective } from './firebase-storage/dropdawn-exempl/drop-zone.directive';
+import { DropdawnExemplComponent } from './firebase-storage/dropdawn-exempl/dropdawn-exempl.component';
+import { FileUploadComponent } from './firebase-storage/dropdawn-exempl/file-upload/file-upload.component';
+import { FileSizePipe } from './firebase-storage/dropdawn-exempl/file-size.pipe';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { DropZoneDirective } from './firebase-storage/drop-zone.directive';
     FirebaseColectionComponent,
     FirebaseRealtimeComponent,
     FirebaseStorageComponent,
-    DropZoneDirective
+    DropZoneDirective,
+    DropdawnExemplComponent,
+    FileUploadComponent,
+    FileSizePipe
   ],
   imports: [
     BrowserModule,

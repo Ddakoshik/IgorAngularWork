@@ -32,7 +32,8 @@
 <input type="file" (change)="uploadFile($event)" accept=".png,.jpg">
 <div>{{ uploadPercent | async }}</div>
 <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+<img [src]="downloadURL | async" [alt]="downloadURL | async">
 
-
+<!-- 
 <p>img download</p>
-<img [src]="profileUrl | async" />
+<img [src]="profileUrl | async" /> -->
