@@ -38,6 +38,7 @@ export class FileUploadComponent implements OnInit {
 
 
  startUpload(event: FileList) {
+   console.log(event.item(0).type.split('/')[0]);
    // The File object
    const file = event.item(0);
 
